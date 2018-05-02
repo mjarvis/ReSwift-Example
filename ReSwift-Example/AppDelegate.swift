@@ -18,7 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         state: nil, // Default `AppState` -- I prefer to let the reducers create the initial state
         middleware: [
             StatePersistence.middleware(),
-            loggingMiddleware()
+            loggingMiddleware(),
+            errorRecorder(handler: { error in
+                #if RELEASE
+                    Crashlytics.sharedInstance().recordError(error.error)
+                #endif
+            })
         ]
     )
 
@@ -29,9 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         self.window = window
 
-        if let action = StatePersistence<AppState>.restore() {
-            store.dispatch(action)
-        }
+        let action = StatePersistence<AppState>.restore()
+        store.dispatch(action)
 
         window.makeKeyAndVisible()
 

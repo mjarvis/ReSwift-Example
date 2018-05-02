@@ -23,6 +23,7 @@
 		D4496C79209A276E005ADA9D /* CounterStateReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4496C78209A276E005ADA9D /* CounterStateReducerTests.swift */; };
 		D4496C81209A285D005ADA9D /* CounterViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4496C80209A285D005ADA9D /* CounterViewControllerTests.swift */; };
 		D4496C83209A2A2B005ADA9D /* LoggingMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4496C82209A2A2B005ADA9D /* LoggingMiddleware.swift */; };
+		D4496C85209A2AB0005ADA9D /* ErrorRecordingMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4496C84209A2AB0005ADA9D /* ErrorRecordingMiddleware.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		D4496C7A209A276E005ADA9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4496C80209A285D005ADA9D /* CounterViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewControllerTests.swift; sourceTree = "<group>"; };
 		D4496C82209A2A2B005ADA9D /* LoggingMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingMiddleware.swift; sourceTree = "<group>"; };
+		D4496C84209A2AB0005ADA9D /* ErrorRecordingMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorRecordingMiddleware.swift; sourceTree = "<group>"; };
 		FB7BE23AF94573EF2602E498 /* Pods-ReSwift-ExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReSwift-ExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReSwift-ExampleTests/Pods-ReSwift-ExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FB81074E947C34AECD3EAAA4 /* libPods-ReSwift-ExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReSwift-ExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -135,6 +137,7 @@
 				D4496C65209A19C0005ADA9D /* AppStateReducer.swift */,
 				D4496C70209A22C9005ADA9D /* StatePersistence.swift */,
 				D4496C82209A2A2B005ADA9D /* LoggingMiddleware.swift */,
+				D4496C84209A2AB0005ADA9D /* ErrorRecordingMiddleware.swift */,
 			);
 			path = "ReSwift-Example";
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				D4496C71209A22C9005ADA9D /* StatePersistence.swift in Sources */,
 				D4496C6B209A1C31005ADA9D /* CounterView.swift in Sources */,
 				D4496C83209A2A2B005ADA9D /* LoggingMiddleware.swift in Sources */,
+				D4496C85209A2AB0005ADA9D /* ErrorRecordingMiddleware.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

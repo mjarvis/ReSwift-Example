@@ -16,14 +16,19 @@ struct StatePersistence<S: Codable> {
         let state: S
     }
 
-    static func restore() -> Action? {
-        guard let data = try? Data(contentsOf: file) else {
-            return nil
-        }
+    struct Error: Action, RecordableError {
+        let error: Swift.Error
+    }
 
-        let decoder = JSONDecoder()
-        let state = try! decoder.decode(S.self, from: data)
-        return Restore(state: state)
+    static func restore() -> Action {
+        do {
+            let data = try Data(contentsOf: file)
+            let decoder = JSONDecoder()
+            let state = try decoder.decode(S.self, from: data)
+            return Restore(state: state)
+        } catch {
+            return Error(error: error)
+        }
     }
 
     static func middleware() -> Middleware<S> {
@@ -37,8 +42,13 @@ struct StatePersistence<S: Codable> {
                     }
 
                     let encoder = JSONEncoder()
-                    let data = try! encoder.encode(state)
-                    try! data.write(to: file)
+                    do {
+                        let data = try encoder.encode(state)
+                        try data.write(to: file)
+                    } catch {
+                        let error = Error(error: error)
+                        dispatch(error)
+                    }
                 }
             }
         }
