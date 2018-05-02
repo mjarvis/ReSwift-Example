@@ -18,6 +18,7 @@
 		D4496C6B209A1C31005ADA9D /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4496C6A209A1C31005ADA9D /* CounterView.swift */; };
 		D4496C6D209A1D56005ADA9D /* CounterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4496C6C209A1D56005ADA9D /* CounterState.swift */; };
 		D4496C6F209A1DBB005ADA9D /* CounterActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4496C6E209A1DBB005ADA9D /* CounterActions.swift */; };
+		D4496C71209A22C9005ADA9D /* StatePersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4496C70209A22C9005ADA9D /* StatePersistence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		D4496C6A209A1C31005ADA9D /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		D4496C6C209A1D56005ADA9D /* CounterState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterState.swift; sourceTree = "<group>"; };
 		D4496C6E209A1DBB005ADA9D /* CounterActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterActions.swift; sourceTree = "<group>"; };
+		D4496C70209A22C9005ADA9D /* StatePersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatePersistence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				D4496C5D209A1834005ADA9D /* Info.plist */,
 				D4496C63209A19A6005ADA9D /* AppState.swift */,
 				D4496C65209A19C0005ADA9D /* AppStateReducer.swift */,
+				D4496C70209A22C9005ADA9D /* StatePersistence.swift */,
 			);
 			path = "ReSwift-Example";
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				D4496C54209A1833005ADA9D /* ViewController.swift in Sources */,
 				D4496C52209A1833005ADA9D /* AppDelegate.swift in Sources */,
 				D4496C6D209A1D56005ADA9D /* CounterState.swift in Sources */,
+				D4496C71209A22C9005ADA9D /* StatePersistence.swift in Sources */,
 				D4496C6B209A1C31005ADA9D /* CounterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

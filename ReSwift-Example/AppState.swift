@@ -9,7 +9,7 @@
 import Foundation
 import ReSwift
 
-struct AppState: StateType, Equatable {
+struct AppState: StateType, Equatable, Codable {
     let counterState: CounterState
 }
 

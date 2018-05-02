@@ -9,7 +9,7 @@
 import Foundation
 import ReSwift
 
-struct CounterState: Equatable {
+struct CounterState: Equatable, Codable {
     var count: Int
 }
 

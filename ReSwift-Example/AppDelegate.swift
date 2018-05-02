@@ -16,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private let store: Store<AppState> = Store(
         reducer: appStateReducer(),
         state: nil, // Default `AppState` -- I prefer to let the reducers create the initial state
-        middleware: []
+        middleware: [
+            StatePersistence.middleware()
+        ]
     )
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -25,6 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.rootViewController = CounterViewController(store: store)
 
         self.window = window
+
+        if let action = StatePersistence<AppState>.restore() {
+            store.dispatch(action)
+        }
 
         window.makeKeyAndVisible()
 
