@@ -17,7 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         reducer: appStateReducer(),
         state: nil, // Default `AppState` -- I prefer to let the reducers create the initial state
         middleware: [
-            StatePersistence.middleware()
+            StatePersistence.middleware(),
+            loggingMiddleware()
         ]
     )
 
