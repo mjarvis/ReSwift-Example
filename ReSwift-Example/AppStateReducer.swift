@@ -11,6 +11,8 @@ import ReSwift
 
 func appStateReducer() -> Reducer<AppState> {
     return { action, state in
-        return state ?? AppState()
+        return AppState(
+            counterState: counterStateReducer(action, state?.counterState)
+        )
     }
 }

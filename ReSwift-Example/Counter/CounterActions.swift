@@ -1,5 +1,5 @@
 //
-//  AppState.swift
+//  CounterActions.swift
 //  ReSwift-Example
 //
 //  Created by Malcolm Jarvis on 2018-05-02.
@@ -9,8 +9,4 @@
 import Foundation
 import ReSwift
 
-struct AppState: StateType, Equatable {
-    let counterState: CounterState
-}
-
-extension AppState: HasCounterState {}
+struct IncrementCounter: Action {}

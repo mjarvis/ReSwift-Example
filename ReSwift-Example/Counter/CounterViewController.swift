@@ -9,6 +9,24 @@
 import UIKit
 import ReSwift
 
-final class CounterViewController<S: StoreType>: ViewController<S, UIView> {
+final class CounterViewController<S: StoreType>: ViewController<S, CounterView> where S.State: HasCounterState {
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        customView.button.addTarget(self, action: #selector(incrementCounter), for: .touchUpInside)
+
+        store.subscribe(self)
+    }
+
+    @objc private func incrementCounter() {
+        let action = IncrementCounter()
+        store.dispatch(action)
+    }
+}
+
+extension CounterViewController: StoreSubscriber {
+    func newState(state: S.State) {
+        customView.label.text = "\(state.counterState.count)"
+    }
 }
